@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Reading Journal</title>
-   <!-- Google tag (gtag.js) -->
+
+  <!-- Google tag (gtag.js) ✅scriptは必ず閉じる -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1MF9WR97T"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -28,7 +29,7 @@
     h1 {
       font-family: 'Playfair Display', serif;
       text-align: center;
-      margin: 0 0 70px;
+      margin: 0 0 28px;
       font-size: 48px;
       letter-spacing: 4px;
       font-weight: 500;
@@ -42,6 +43,36 @@
       height: 1px;
       background: rgba(200, 162, 168, 0.55);
       margin: 26px auto 0;
+    }
+
+    /* C: small hero copy */
+    .hero-sub{
+      text-align:center;
+      margin: 18px 0 0;
+      font-size:18px;
+      color: rgba(90,102,117,0.85);
+    }
+    .hero-sub2{
+      text-align:center;
+      margin: 8px 0 0;
+      font-size:15px;
+      color: rgba(90,102,117,0.60);
+    }
+    .value-bullets{
+      max-width:820px;
+      margin: 26px auto 0;
+      display:flex;
+      justify-content:center;
+      gap: 18px;
+      flex-wrap:wrap;
+      color: rgba(90,102,117,0.80);
+      font-size:14px;
+    }
+    .value-bullets div{
+      padding: 6px 12px;
+      border: 1px solid rgba(90,102,117,0.18);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.45);
     }
 
     input[type="text"] {
@@ -61,10 +92,7 @@
       box-shadow: 0 0 0 3px rgba(90, 102, 117, 0.10);
     }
 
-    input[type="checkbox"] {
-      width: auto;
-      margin: 0;
-    }
+    input[type="checkbox"] { width: auto; margin: 0; }
 
     button {
       padding: 7px 16px;
@@ -79,7 +107,6 @@
       font-size: 15px;
       white-space: nowrap;
     }
-
     button:hover { background: rgba(90, 102, 117, 0.14); }
 
     .top-bar {
@@ -87,7 +114,7 @@
       justify-content: center;
       gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 20px;
+      margin: 28px 0 20px;
       align-items: center;
     }
 
@@ -123,6 +150,7 @@
       letter-spacing: 0.5px;
       line-height: 1.2;
       word-break: break-word;
+      cursor: text;
     }
 
     .seriesline {
@@ -154,21 +182,18 @@
       flex-wrap: wrap;
       margin-top: 4px;
     }
-
     .mini-row button {
       padding: 4px 10px;
       font-size: 12px;
       letter-spacing: 0.5px;
     }
 
-    /* Tags */
     .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
       margin-top: 2px;
     }
-
     .tag {
       font-size: 12px;
       padding: 3px 10px;
@@ -179,13 +204,11 @@
       letter-spacing: 0.5px;
       cursor: pointer;
     }
-
     .tag.active {
       background: rgba(90, 102, 117, 0.20);
       border-color: rgba(90, 102, 117, 0.35);
     }
 
-    /* Modal */
     .modal {
       position: fixed;
       inset: 0;
@@ -196,7 +219,6 @@
       padding: 28px;
       z-index: 9999;
     }
-
     .modal-card {
       width: min(520px, 92vw);
       background: rgba(255, 255, 255, 0.85);
@@ -206,7 +228,6 @@
       padding: 18px;
       backdrop-filter: blur(6px);
     }
-
     .modal-title {
       font-family: 'Playfair Display', serif;
       font-size: 18px;
@@ -214,7 +235,6 @@
       color: #5a6675;
       margin: 6px 8px 14px;
     }
-
     .modal-img {
       width: 100%;
       height: auto;
@@ -222,14 +242,12 @@
       border: 1px solid rgba(60, 60, 60, 0.10);
       display: block;
     }
-
     .modal-hint {
       margin: 12px 8px 6px;
       font-size: 14px;
       color: rgba(80, 90, 105, 0.75);
     }
 
-    /* Flip card */
     .flip-card { perspective: 1200px; }
     .flip-inner {
       display: grid;
@@ -243,7 +261,6 @@
     }
     .flip-back { transform: rotateY(180deg); }
 
-    /* Surface */
     .book-surface {
       background: rgba(255, 255, 255, 0.72);
       padding: 34px 36px;
@@ -254,13 +271,11 @@
       gap: 25px;
       align-items: flex-start;
       transition: box-shadow 0.25s ease;
-      min-height: 320px;
+      min-height: 320px; /* カードサイズ統一 */
     }
-    
     .flip-card:hover .book-surface {
       box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
     }
-
     .book-surface.finished {
       background: rgba(245, 238, 236, 0.75);
       border-left: 2px solid rgba(200, 162, 168, 0.75);
@@ -283,33 +298,56 @@
       line-height: 1.5;
       white-space: pre-wrap;
       word-break: break-word;
+      cursor: text;
     }
     .note.empty { color: rgba(70, 80, 95, 0.45); }
+
+    textarea.note-edit, input.title-edit {
+      width: 100%;
+      box-sizing: border-box;
+      font-family: inherit;
+      border-radius: 10px;
+      border: 1px solid rgba(60,60,60,0.18);
+      background: rgba(255,255,255,0.65);
+      outline: none;
+    }
+    input.title-edit{
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      padding: 6px 10px;
+      height: 36px;
+    }
+    textarea.note-edit{
+      font-size: 16px;
+      padding: 10px 12px;
+      min-height: 90px;
+      resize: vertical;
+    }
   </style>
 </head>
 
 <body>
   <h1>The Reading Journal</h1>
+  <p class="hero-sub">Track your Japanese manga reading journey.</p>
+  <p class="hero-sub2">Flip cards to keep Japanese & English titles, notes, and links separately.</p>
+  <div class="value-bullets">
+    <div>📚 Manage series & volumes</div>
+    <div>🌏 Separate JP / EN titles & notes</div>
+    <div>📝 Build your own learning log</div>
+  </div>
 
   <div class="top-bar">
     <input
       type="text"
       id="titleInput"
-      placeholder="Title"
+      placeholder="Japanese Title"
       onkeydown="if(event.key === 'Enter') addBook()"
     />
     <button onclick="addBook()">Add</button>
-
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="Search..."
-      oninput="displayBooks()"
-    />
+    <input type="text" id="searchInput" placeholder="Search..." oninput="displayBooks()" />
   </div>
 
   <div id="bookList"></div>
-
   <input type="file" id="coverFileInput" accept="image/*" style="display:none" />
 
   <script>
@@ -320,6 +358,11 @@
     let books = [];
     let activeTag = null;
 
+    // GA event helper
+    function trackEvent(name, params = {}) {
+      if (typeof gtag === "function") gtag("event", name, params);
+    }
+
     // ---- localStorage ----
     const savedBooks = localStorage.getItem("books");
     if (savedBooks) books = JSON.parse(savedBooks);
@@ -328,8 +371,10 @@
       localStorage.setItem("books", JSON.stringify(books));
     }
 
+    // ✅ migrate old data -> new fields
     function ensureBookIdsAndDefaults() {
       let changed = false;
+
       for (const b of books) {
         if (!b.id) {
           b.id = crypto.randomUUID
@@ -338,22 +383,26 @@
           changed = true;
         }
 
-        // series / volume
+        // OLD title exists? keep for compatibility
+        if (typeof b.title !== "string") { b.title = ""; changed = true; }
+
+        // ✅ NEW: split title by side (migration)
+        if (typeof b.jpTitle !== "string") { b.jpTitle = b.title || ""; changed = true; }
+        if (typeof b.enTitle !== "string") { b.enTitle = ""; changed = true; }
+
         if (typeof b.series !== "string") { b.series = ""; changed = true; }
         if (typeof b.volume !== "string") { b.volume = ""; changed = true; }
 
-        // tags
         if (!Array.isArray(b.tags)) { b.tags = []; changed = true; }
 
-        // B仕様
         if (typeof b.jpUrl !== "string") { b.jpUrl = ""; changed = true; }
         if (typeof b.trUrl !== "string") { b.trUrl = ""; changed = true; }
         if (typeof b.jpNote !== "string") { b.jpNote = ""; changed = true; }
         if (typeof b.trNote !== "string") { b.trNote = ""; changed = true; }
 
-        // finished
         if (typeof b.finished !== "boolean") { b.finished = !!b.finished; changed = true; }
       }
+
       if (changed) saveBooks();
     }
 
@@ -408,7 +457,7 @@
     }
 
     // ---- ObjectURL cache ----
-    const coverUrlCache = new Map(); // key -> objectURL
+    const coverUrlCache = new Map();
     function revokeCoverUrl(key) {
       const url = coverUrlCache.get(key);
       if (url) {
@@ -418,7 +467,7 @@
     }
 
     function coverKey(bookId, side) {
-      return `${bookId}:${side}`; // side "jp" | "tr"
+      return `${bookId}:${side}`;
     }
 
     // ---- UI helpers ----
@@ -469,8 +518,8 @@
     // ---- App ----
     function addBook() {
       const input = document.getElementById("titleInput");
-      const title = input.value.trim();
-      if (!title) return;
+      const jpTitle = input.value.trim();
+      if (!jpTitle) return;
 
       const id = crypto.randomUUID
         ? crypto.randomUUID()
@@ -478,22 +527,25 @@
 
       books.push({
         id,
-        title,
-        finished: false,
 
-        // side-specific
+        // ✅ side titles
+        jpTitle,
+        enTitle: "",
+
+        // old compatibility (optional)
+        title: jpTitle,
+
+        finished: false,
         jpUrl: "",
         trUrl: "",
         jpNote: "",
         trNote: "",
-
-        // series
         series: "",
         volume: "",
-
-        // shared
         tags: []
       });
+
+      trackEvent("add_book", { jp_title: jpTitle });
 
       input.value = "";
       input.focus();
@@ -506,6 +558,14 @@
       return Number.isFinite(n) ? n : NaN;
     }
 
+    function sideTitleOf(book, isJP) {
+      const jp = (book.jpTitle || "").trim();
+      const en = (book.enTitle || "").trim();
+      const legacy = (book.title || "").trim();
+      if (isJP) return jp || legacy || "";
+      return en || "";
+    }
+
     async function displayBooks() {
       const list = document.getElementById("bookList");
       list.innerHTML = "";
@@ -514,15 +574,13 @@
         .toLowerCase()
         .trim();
 
-      // Search: title OR series
       const filteredBooks = books.filter(b => {
-        const hay = `${b.title || ""} ${b.series || ""}`.toLowerCase();
+        const hay = `${b.jpTitle || ""} ${b.enTitle || ""} ${b.title || ""} ${b.series || ""}`.toLowerCase();
         const matchesSearch = hay.includes(searchText);
         const matchesTag = !activeTag || (Array.isArray(b.tags) && b.tags.includes(activeTag));
         return matchesSearch && matchesTag;
       });
 
-      // Sort: unfinished -> finished, series -> volume -> title
       filteredBooks.sort((a, b) => {
         if (a.finished !== b.finished) return Number(a.finished) - Number(b.finished);
 
@@ -538,23 +596,25 @@
         const vbS = (b.volume || "").trim();
         if (vaS !== vbS) return vaS.localeCompare(vbS);
 
-        return (a.title || "").localeCompare(b.title || "");
+        const ta = ((a.jpTitle || a.title || "")).localeCompare((b.jpTitle || b.title || ""));
+        if (ta !== 0) return ta;
+
+        return ((a.enTitle || "")).localeCompare((b.enTitle || ""));
       });
 
       for (const book of filteredBooks) {
         const index = books.indexOf(book);
 
-        // flip wrapper
         const flipCard = document.createElement("div");
         flipCard.className = "flip-card";
 
         const inner = document.createElement("div");
         inner.className = "flip-inner";
 
-        const front = document.createElement("div"); // JP
+        const front = document.createElement("div");
         front.className = "flip-side book-surface";
 
-        const back = document.createElement("div"); // EN
+        const back = document.createElement("div");
         back.className = "flip-side flip-back book-surface";
 
         if (book.finished) {
@@ -562,8 +622,11 @@
           back.classList.add("finished");
         }
 
-        // click to flip
-        flipCard.onclick = () => flipCard.classList.toggle("flipped");
+        // flip + event
+        flipCard.onclick = () => {
+          flipCard.classList.toggle("flipped");
+          trackEvent("flip_card", { jp_title: (book.jpTitle || book.title || ""), has_en_title: !!(book.enTitle || "").trim() });
+        };
 
         const buildSide = async ({ side, surface }) => {
           const isJP = side === "jp";
@@ -586,7 +649,10 @@
               img.style.cursor = "zoom-in";
               img.onclick = (e) => {
                 e.stopPropagation();
-                openCoverModal({ title: book.title, src: img.src });
+                openCoverModal({
+                  title: sideTitleOf(book, isJP) || (book.jpTitle || book.title || "Cover"),
+                  src: img.src
+                });
               };
             } else {
               img.removeAttribute("src");
@@ -598,41 +664,44 @@
           const content = document.createElement("div");
           content.className = "content";
 
-          // title
+          // title (side-specific)
           const titleEl = document.createElement("div");
           titleEl.className = "title";
-          titleEl.textContent = book.title || "";
+          titleEl.textContent = sideTitleOf(book, isJP);
           if (book.finished) titleEl.style.textDecoration = "line-through";
-          titleEl.style.cursor = "text";
           titleEl.title = "Double-click to edit";
 
           titleEl.ondblclick = (e) => {
             e.stopPropagation();
 
             const input = document.createElement("input");
+            input.className = "title-edit";
             input.type = "text";
-            input.value = book.title || "";
-            input.style.width = "100%";
-            input.style.height = "30px";
-            input.style.fontSize = "20px";
-            input.style.letterSpacing = "0.5px";
-            input.style.padding = "6px 10px";
-            input.style.borderRadius = "8px";
-            input.style.border = "1px solid rgba(60,60,60,0.18)";
-            input.style.background = "rgba(255,255,255,0.65)";
+            input.value = sideTitleOf(book, isJP);
 
-            const original = book.title || "";
+            const original = input.value;
+
             titleEl.replaceWith(input);
             input.focus();
             input.select();
 
             const commit = () => {
-              const newTitle = input.value.trim();
-              book.title = newTitle === "" ? original : newTitle;
+              const v = input.value.trim();
+
+              if (isJP) book.jpTitle = v;
+              else book.enTitle = v;
+
+              // optional: keep legacy title for compatibility
+              book.title = book.jpTitle || book.enTitle || book.title || "";
+
               saveBooks();
               displayBooks();
             };
-            const cancel = () => displayBooks();
+            const cancel = () => {
+              // revert without save
+              input.value = original;
+              displayBooks();
+            };
 
             input.addEventListener("keydown", (ev) => {
               if (ev.key === "Enter") commit();
@@ -641,7 +710,7 @@
             input.addEventListener("blur", commit);
           };
 
-          // series line (titleの"下"に必ず出す)
+          // series line
           const seriesLine = document.createElement("div");
           seriesLine.className = "seriesline";
           if (book.series && book.series.trim()) {
@@ -685,7 +754,7 @@
             tagsEl.appendChild(tagEl);
           });
 
-          // note
+          // note (side specific) + edit
           const noteEl = document.createElement("div");
           noteEl.className = "note";
           const noteValue = isJP ? (book.jpNote || "") : (book.trNote || "");
@@ -695,22 +764,14 @@
           } else {
             noteEl.textContent = noteValue;
           }
+          noteEl.title = "Double-click to edit";
 
           noteEl.ondblclick = (e) => {
             e.stopPropagation();
 
             const textarea = document.createElement("textarea");
+            textarea.className = "note-edit";
             textarea.value = noteValue;
-            textarea.style.width = "100%";
-            textarea.style.minHeight = "90px";
-            textarea.style.resize = "vertical";
-            textarea.style.fontFamily = "inherit";
-            textarea.style.fontSize = "16px";
-            textarea.style.padding = "10px 12px";
-            textarea.style.borderRadius = "10px";
-            textarea.style.border = "1px solid rgba(60,60,60,0.18)";
-            textarea.style.background = "rgba(255,255,255,0.65)";
-            textarea.style.boxSizing = "border-box";
 
             noteEl.replaceWith(textarea);
             textarea.focus();
@@ -719,6 +780,7 @@
               const v = textarea.value.trim();
               if (isJP) book.jpNote = v;
               else book.trNote = v;
+
               saveBooks();
               displayBooks();
             };
@@ -740,16 +802,16 @@
             book.finished = finishedCheckbox.checked;
             saveBooks();
             displayBooks();
+            trackEvent("toggle_finished", { finished: book.finished, jp_title: (book.jpTitle || book.title || "") });
           };
 
           const controls = document.createElement("div");
           controls.className = "controls";
           controls.onclick = (e) => e.stopPropagation();
-
           controls.appendChild(sideLabel);
           controls.appendChild(createCheckSet(finishedCheckbox, "Finished"));
 
-          // buttons
+          // buttons row
           const miniRow = document.createElement("div");
           miniRow.className = "mini-row";
           miniRow.onclick = (e) => e.stopPropagation();
@@ -758,6 +820,7 @@
           removeButton.textContent = "Remove";
           removeButton.onclick = async (e) => {
             e.stopPropagation();
+
             try { await deleteCover(coverKey(book.id, "jp")); } catch {}
             try { await deleteCover(coverKey(book.id, "tr")); } catch {}
             revokeCoverUrl(coverKey(book.id, "jp"));
@@ -766,6 +829,7 @@
             books.splice(index, 1);
             saveBooks();
             displayBooks();
+            trackEvent("remove_book", { jp_title: (book.jpTitle || book.title || "") });
           };
 
           const urlButton = document.createElement("button");
@@ -780,9 +844,11 @@
                 else book.trUrl = url;
                 saveBooks();
                 displayBooks();
+                trackEvent("set_url", { side: isJP ? "jp" : "en" });
               }
             } else {
               window.open(urlValue, "_blank");
+              trackEvent("open_url", { side: isJP ? "jp" : "en" });
             }
           };
 
@@ -799,6 +865,7 @@
                 await putCover(key, file);
                 revokeCoverUrl(key);
                 displayBooks();
+                trackEvent("set_cover", { side: isJP ? "jp" : "en" });
               } catch {
                 alert("表紙の保存に失敗しました（IndexedDBエラー）。");
               } finally {
@@ -816,6 +883,7 @@
               await deleteCover(key);
               revokeCoverUrl(key);
               displayBooks();
+              trackEvent("clear_cover", { side: isJP ? "jp" : "en" });
             } catch {
               alert("表紙の削除に失敗しました。");
             }
@@ -829,11 +897,13 @@
             if (!tag) return;
             const clean = tag.trim();
             if (!clean) return;
+
             if (!Array.isArray(book.tags)) book.tags = [];
             if (!book.tags.includes(clean)) {
               book.tags.push(clean);
               saveBooks();
               displayBooks();
+              trackEvent("add_tag", { tag: clean });
             }
           };
 
@@ -850,10 +920,35 @@
 
             book.series = name.trim();
             book.volume = vol.trim();
+
+            saveBooks();
+            displayBooks();
+            trackEvent("set_series", { series: book.series });
+          };
+
+          const editTitleButton = document.createElement("button");
+          editTitleButton.textContent = "Edit Title";
+          editTitleButton.onclick = (e) => {
+            e.stopPropagation();
+
+            const current = sideTitleOf(book, isJP);
+            const value = prompt("Edit title", current);
+
+            if (value === null) return;
+
+            const trimmed = value.trim();
+
+            if (isJP) book.jpTitle = trimmed;
+            else book.enTitle = trimmed;
+
+            // 互換用
+            book.title = book.jpTitle || book.enTitle || book.title || "";
+
             saveBooks();
             displayBooks();
           };
 
+          miniRow.appendChild(editTitleButton);
           miniRow.appendChild(removeButton);
           miniRow.appendChild(urlButton);
           miniRow.appendChild(coverButton);
@@ -861,7 +956,7 @@
           miniRow.appendChild(tagButton);
           miniRow.appendChild(seriesButton);
 
-          // assemble (順番が超大事)
+          // assemble
           content.appendChild(titleEl);
           content.appendChild(seriesLine);
           content.appendChild(tagsEl);
@@ -898,6 +993,6 @@
     });
   </script>
 </body>
-
 </html>
+
 
