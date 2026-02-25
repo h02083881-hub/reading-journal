@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reading Journal Portfolio | Experiments</title>
+
+  <style>
+    body{
+      font-family: Georgia, serif;
+      background:#fbf8f4;
+      padding:60px;
+      color:#333;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    nav{
+      display:flex;
+      flex-wrap: wrap;
+      gap:16px;
+      margin-bottom:40px;
+      font-size:16px;
+    }
+
+    nav a{
+      color:#333;
+      text-decoration:none;
+      padding:8px 10px;
+      border-radius:8px;
+    }
+
+    nav a:hover{
+      text-decoration: underline;
+    }
+
+    h1{
+      font-size:38px;
+      margin: 0 0 10px 0;
+    }
+
+    .subtitle{
+      font-size:18px;
+      line-height:1.7;
+      margin: 0 0 26px 0;
+      opacity: 0.9;
+    }
+
+    .card{
+      background: rgba(255,255,255,0.55);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      padding: 18px 18px;
+      margin: 16px 0;
+    }
+
+    .card h2{
+      font-size:20px;
+      margin: 0 0 10px 0;
+    }
+
+    .meta{
+      font-size:14px;
+      opacity: 0.8;
+      margin-top: 2px;
+    }
+
+    .label{
+      font-weight: 600;
+      margin-top: 12px;
+      font-size: 16px;
+    }
+
+    p, li{
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    ul{
+      margin: 8px 0 0 18px;
+    }
+
+    .small{
+      font-size: 14px;
+      opacity: 0.8;
+      margin-top: 12px;
+    }
+
+    .accent-link{
+      color:#6c7a89;
+      text-decoration:none;
+      border-bottom: 1px solid rgba(108,122,137,0.7);
+      padding-bottom: 2px;
+    }
+    .accent-link:hover{
+      border-bottom: 1px solid rgba(108,122,137,1);
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="portfolio.html">Home</a>
+    <a href="project.html">Project</a>
+    <a href="experiments.html">Experiments</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <h1>Marketing Experiments</h1>
+  <p class="subtitle">
+    I document small experiments to improve the product, usability, and communication.
+    Each entry follows: <strong>Problem → Action → Result</strong>.
+  </p>
+
+  <!-- Experiment 1 -->
+  <section class="card">
+    <h2>Experiment 1: Added an “About this project” link</h2>
+    <div class="meta">Goal: Make the project context easy to find without distracting from the app.</div>
+
+    <div class="label">Problem</div>
+    <p>
+      The app is useful, but new visitors may not understand what it is for or why it exists.
+      I needed a lightweight way to explain the project.
+    </p>
+
+    <div class="label">Action</div>
+    <p>
+      I placed a small link (“About this project”) near the hero section, instead of adding another button.
+    </p>
+
+    <div class="label">Result</div>
+    <ul>
+      <li>Clearer project context for first-time visitors</li>
+      <li>Kept the interface clean and calm (no extra buttons)</li>
+    </ul>
+
+    <p class="small">
+      Note: I chose a link style to match the reading-journal atmosphere and avoid “button overload.”
+    </p>
+  </section>
+
+  <!-- Experiment 2 -->
+  <section class="card">
+    <h2>Experiment 2: Supported both Japanese and English titles</h2>
+    <div class="meta">Goal: Reduce friction when logging books with different title languages.</div>
+
+    <div class="label">Problem</div>
+    <p>
+      Japanese and English titles often differ, and some books are easier to manage using their original English titles.
+      Without support for both, organizing entries becomes inconsistent.
+    </p>
+
+    <div class="label">Action</div>
+    <p>
+      I added a way to keep Japanese and English titles separately, so users can record and search more reliably.
+    </p>
+
+    <div class="label">Result</div>
+    <ul>
+      <li>More flexible logging (users can choose the most natural title)</li>
+      <li>Better consistency for search and organization</li>
+    </ul>
+  </section>
+
+  <!-- Experiment 3 -->
+  <section class="card">
+    <h2>Experiment 3: Iterating the layout to improve focus</h2>
+    <div class="meta">Goal: Help users understand the app quickly and start logging with confidence.</div>
+
+    <div class="label">Problem</div>
+    <p>
+      When the top section is too busy, users may not know where to start (what to click first).
+    </p>
+
+    <div class="label">Action</div>
+    <p>
+      I kept the hero text short, grouped the value points, and aimed for a calm “reading note” feel.
+    </p>
+
+    <div class="label">Result</div>
+    <ul>
+      <li>Cleaner first impression</li>
+      <li>Clearer path: read → understand → start logging</li>
+    </ul>
+
+    <p class="small">
+      Next step: connect this with analytics to measure whether the change improves engagement.
+    </p>
+  </section>
+
+  <!-- Experiment 4 -->
+  <section class="card">
+    <h2>Experiment 4: Simplified navigation (App link only on Home)</h2>
+    <div class="meta">Goal: Keep the portfolio focused and reduce decision fatigue.</div>
+
+    <div class="label">Problem</div>
+    <p>
+    When “Try the App” appears on every page, visitors may jump around before understanding the project.
+    This can weaken the portfolio story and make the experience feel inconsistent.
+    </p>
+
+    <div class="label">Action</div>
+    <p>
+    I placed the “Try the App” link only on the Home page and kept other pages focused on their roles:
+    Project (case overview), Experiments (iteration notes), and About (background).
+    </p>
+
+    <div class="label">Result</div>
+    <ul>
+      <li>Clearer flow: Home → Project → Experiments</li>
+      <li>Less visual clutter and a calmer reading experience</li>
+      <li>A more consistent “case study” structure</li>
+    </ul>
+
+    <p class="small">
+    Next step: measure whether this improves time on page and navigation depth (analytics).
+    </p>
+  </section>
+
+  <!-- Experiment 5 -->
+  <section class="card">
+
+  <h2>Experiment 5: SEO optimization and README improvement</h2>
+
+  <div class="meta">
+  Goal: Improve search visibility and make the project easier to understand.
+  </div>
+
+  <div class="label">Problem</div>
+
+  <p>
+  The original project title "Reading Journal" was simple but not descriptive.
+  It did not clearly explain who the app was for or what it did.
+
+  Some users may search for tools for Japanese learners rather than "reading journal".
+  </p>
+
+  <p>
+  The original README was also very minimal, which made it harder for visitors
+  to quickly understand the project and its purpose.
+  </p>
+
+  <div class="label">Action</div>
+
+  <p>
+  I updated the project title to:
+  </p>
+
+  <p>
+  <strong>
+  Reading Journal for Japanese Learners – Track Books in Japanese & English
+  </strong>
+  </p>
+
+  <p>
+  I also improved the README by adding:
+  </p>
+
+  <ul>
+
+  <li>A clearer project description</li>
+
+  <li>A feature list</li>
+
+  <li>A project concept explanation</li>
+
+  <li>A project goal section</li>
+
+  </ul>
+
+  <div class="label">Result</div>
+
+  <ul>
+
+  <li>Clearer project positioning</li>
+
+  <li>Better search visibility potential</li>
+
+  <li>Easier understanding for new visitors</li>
+
+  <li>Stronger project presentation</li>
+
+  </ul>
+
+<p class="small">
+
+Next step: Monitor search traffic and visitor behavior using analytics.
+
+</p>
+
+</section>
+
+  <p class="small">
+    Next: I plan to add an <a class="accent-link" href="project.html">Analytics</a> section once I collect enough data.
+  </p>
+</body>
+</html>

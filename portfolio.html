@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reading Journal Portfolio | Home</title>
+
+  <style>
+    body{
+      font-family: Georgia, serif;
+      background:#fbf8f4;
+      padding:60px;
+      color:#333;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .accent-link{
+
+    color:#6c7a89;
+    text-decoration:none;
+    border-bottom:1px solid rgba(108,122,137,0.7);
+    padding-bottom:2px;
+
+    }
+    .accent-link:hover{
+      border-bottom:1px solid rgba(108,122,137,1);
+    }
+
+    nav{
+      display:flex;
+      flex-wrap: wrap;
+      gap:16px;
+      margin-bottom:52px;
+      font-size:16px;
+    }
+
+    nav a{
+      color:#333;
+      text-decoration:none;
+      padding:8px 10px;
+      border-radius:8px;
+    }
+
+    nav a:hover{
+      text-decoration: underline;
+    }
+
+    h1{
+      font-size:44px;
+      margin: 0 0 10px 0;
+      letter-spacing: 0.5px;
+    }
+
+    .subtitle{
+      font-size:18px;
+      line-height:1.75;
+      margin: 0 0 28px 0;
+      opacity: 0.9;
+      max-width: 60ch;
+    }
+
+    .links{
+      margin-top: 26px;
+      display:flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 360px;
+    }
+
+    .primary{
+      display:inline-block;
+      text-decoration:none;
+      color:#333;
+      background: rgba(255,255,255,0.6);
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-size: 17px;
+    }
+
+    .primary:hover{
+      border: 1px solid rgba(0,0,0,0.18);
+    }
+
+    .small{
+      margin-top: 26px;
+      font-size: 14px;
+      opacity: 0.8;
+      max-width: 70ch;
+      line-height: 1.7;
+    }
+
+    
+
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="portfolio.html">Home</a>
+    <a href="project.html">Project</a>
+    <a href="experiments.html">Experiments</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <h1>Reading Journal project</h1>
+  <p class="subtitle">
+    A personal project exploring digital marketing through a reading app.
+    This site documents my project story, experiments, and learnings.
+  </p>
+
+  <div class="links">
+    <!-- Homeにだけ置く：アプリへの導線 -->
+    <a class="primary" href="https://h02083881-hub.github.io/reading-journal/">Try the App</a>
+
+    <!-- ポートフォリオ導線 -->
+    <a class="primary" href="project.html">View Project</a>
+    <a class="primary" href="experiments.html">Marketing Experiments</a>
+  </div>
+
+  <p class="small">
+    If you want a quick overview, start with <a class="accent-link" href="project.html">Project</a>.
+    For iteration notes, see <a class="accent-link" href="experiments.html">Experiments</a>.
+  </p>
+</body>
+</html>
