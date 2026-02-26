@@ -328,6 +328,54 @@
       min-height: 90px;
       resize: vertical;
     }
+
+    /* --- Responsive (mobile) --- */
+    @media (max-width: 640px) {
+      body {
+        padding: 22px;
+        font-size: 16px;
+      }
+
+      h1 {
+        font-size: 34px;
+        margin-bottom: 18px;
+      }
+
+      .top-bar {
+        gap: 10px;
+        margin: 18px 0 12px;
+      }
+
+      input[type="text"] {
+        width: min(92vw, 360px);
+      }
+
+      #bookList {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 22px;
+      }
+
+      .book-surface {
+        padding: 18px;
+        gap: 14px;
+        min-height: 260px;
+      }
+
+      .cover {
+        width: 70px;
+        height: 96px;
+      }
+
+      .mini-row {
+        gap: 6px;
+      }
+
+      .mini-row button {
+        padding: 6px 10px;
+        font-size: 12px;
+      }
+    }
   </style>
 </head>
 
@@ -680,6 +728,12 @@
           const titleEl = document.createElement("div");
           titleEl.className = "title";
           titleEl.textContent = sideTitleOf(book, isJP);
+          // English side placeholder when empty
+          if (!isJP && !sideTitleOf(book, false).trim()) {
+            titleEl.textContent = "Add English title…";
+            titleEl.style.opacity = "0.55";
+            titleEl.style.fontStyle = "italic";
+          }
           if (book.finished) titleEl.style.textDecoration = "line-through";
           titleEl.title = "Double-click to edit";
 
@@ -696,6 +750,8 @@
             titleEl.replaceWith(input);
             input.focus();
             input.select();
+            input.addEventListener("pointerdown", (e) => e.stopPropagation());
+            input.addEEventListener("click", (e) => e.stopPropagation());
 
             const commit = () => {
               const v = input.value.trim();
@@ -704,7 +760,7 @@
               else book.enTitle = v;
 
               // optional: keep legacy title for compatibility
-              book.title = book.jpTitle || book.enTitle || book.title || "";
+              book.title = book.jpTitle || book.title || "";
 
               saveBooks();
               displayBooks();
@@ -787,6 +843,8 @@
 
             noteEl.replaceWith(textarea);
             textarea.focus();
+            textarea.addEventListener("pointerdown", (e) => e.stopPropagation());
+            textarea.addEventListener("click", (e) => e.stopPropagation());
 
             const commit = () => {
               const v = textarea.value.trim();
@@ -954,7 +1012,7 @@
             else book.enTitle = trimmed;
 
             // 互換用
-            book.title = book.jpTitle || book.enTitle || book.title || "";
+            book.title = book.jpTitle || book.title || "";
 
             saveBooks();
             displayBooks();
