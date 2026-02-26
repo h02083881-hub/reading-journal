@@ -737,8 +737,7 @@
           if (book.finished) titleEl.style.textDecoration = "line-through";
           titleEl.title = "Double-click to edit";
 
-          titleEl.ondblclick = (e) => {
-            e.stopPropagation();
+        
 
             const input = document.createElement("input");
             input.className = "title-edit";
@@ -833,9 +832,6 @@
             noteEl.textContent = noteValue;
           }
           noteEl.title = "Double-click to edit";
-
-          noteEl.ondblclick = (e) => {
-            e.stopPropagation();
 
             const textarea = document.createElement("textarea");
             textarea.className = "note-edit";
@@ -1064,6 +1060,7 @@
   </script>
 </body>
 </html>
+
 
 
 
